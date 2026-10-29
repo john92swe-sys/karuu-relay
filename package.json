@@ -1,0 +1,16 @@
+{
+  "name": "karuu-relay",
+  "version": "0.1.0",
+  "description": "A small BYOK model gateway with failover and evidence-aware business workflow examples.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "init": "node scripts/init.mjs",
+    "start": "node src/server.mjs",
+    "demo": "node src/server.mjs --demo",
+    "test": "node --test",
+    "check": "node --check src/server.mjs && node --check src/gateway.mjs && node --check src/config.mjs && node --check src/demo.mjs && node --check src/workflows.mjs"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "requestTimeoutMs": 30000,
+  "upstreamTimeoutMs": 10000,
+  "maxBodyBytes": 262144,
+  "cooldownMs": 15000,
+  "profiles": {
+    "auto": ["openrouter", "groq"],
+    "research": ["openrouter", "groq"],
+    "writing": ["groq", "openrouter"]
+  },
+  "providers": [
+    {
+      "id": "openrouter",
+      "label": "OpenRouter",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "model": "openrouter/free",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "enabled": true,
+      "requestLimitPerDay": 40,
+      "supportsTools": false
+    },
+    {
+      "id": "groq",
+      "label": "Groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "model": "openai/gpt-oss-120b",
+      "apiKeyEnv": "GROQ_API_KEY",
+      "enabled": true,
+      "requestLimitPerDay": 100,
+      "supportsTools": true
+    }
+  ]
+}
